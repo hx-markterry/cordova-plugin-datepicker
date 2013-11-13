@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>cordova-plugin-datepicker</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	</natures>
+</projectDescription>

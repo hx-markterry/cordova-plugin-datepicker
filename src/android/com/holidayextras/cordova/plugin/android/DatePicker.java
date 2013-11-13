@@ -4,7 +4,7 @@
  * It can now accept `min` and `max` dates for DatePicker.
  */
 
-package com.bikasv.plugins.datepicker;
+package com.holidayextras.cordova.plugin.android;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -33,7 +33,7 @@ import android.os.Build;
 
 @SuppressWarnings("deprecation")
 @SuppressLint("NewApi")
-public class DatePickerPlugin extends Plugin {
+public class DatePicker extends Plugin {
 
 	private static final String ACTION_DATE = "date";
 	private static final String ACTION_TIME = "time";
