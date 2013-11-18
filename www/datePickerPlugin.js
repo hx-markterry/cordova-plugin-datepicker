@@ -31,7 +31,7 @@
 		}
 		this._callback = cb;
 
-		return exec(cb, failureCallback, 'DatePickerPlugin', defaults.mode, new Array(defaults));
+		return exec(cb, failureCallback, 'NativeDatePicker', defaults.mode, new Array(defaults));
 	};
 
 	DatePicker.prototype._dateSelected = function(date) {
