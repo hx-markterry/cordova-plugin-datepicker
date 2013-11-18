@@ -1,6 +1,7 @@
 /**
  * Phonegap DatePicker Plugin Copyright (c) Greg Allen 2011 MIT Licensed
  * Reused and ported to Android plugin by Daniel van 't Oever
+ * Updated to cordova 3.1 by Mark Terry
  */
  
  var exec = require('cordova/exec'),
@@ -15,8 +16,7 @@
 	 */
 	DatePicker.prototype.show = function(options, cb) {
 		if (options.date) {
-			options.date = (options.date.getMonth() + 1) + "/" + (options.date.getDate()) + "/" + (options.date.getFullYear()) + "/"
-					+ (options.date.getHours()) + "/" + (options.date.getMinutes());
+			options.date = (options.date.getMonth() + 1) + "/" + (options.date.getDate()) + "/" + (options.date.getFullYear()) + "/" + (options.date.getHours()) + "/" + (options.date.getMinutes());
 		}
 		var defaults = {
 			mode : '',
@@ -26,8 +26,9 @@
 		};
 
 		for ( var key in defaults) {
-			if (typeof options[key] !== "undefined")
+			if (typeof options[key] !== "undefined"){
 				defaults[key] = options[key];
+			}
 		}
 		this._callback = cb;
 
@@ -36,8 +37,9 @@
 
 	DatePicker.prototype._dateSelected = function(date) {
 		var d = new Date(parseFloat(date) * 1000);
-		if (this._callback)
+		if (this._callback){
 			this._callback(d);
+		}
 	};
 
 	function failureCallback(err) {
