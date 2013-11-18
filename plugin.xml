@@ -3,27 +3,27 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.holidayextras.cordova.plugin.android.DatePicker"
+    id="com.holidayextras.cordova.plugin.android.NativeDatePicker"
     version="0.0.1">
-    <name>Datepicker</name>
+    <name>NativeDatepicker</name>
     <description>Cordova Android Date Picker</description>
     <license>Apache 2.0</license>
     <keywords>cordova,date,picker,android</keywords>
     <repo>https://github.com/hx-markterry/cordova-plugin-datepicker</repo>
 
-    <js-module src="www/datePickerPlugin.js" name="DatePicker">
-        <clobbers target="DatePicker" />
+    <js-module src="www/datePickerPlugin.js" name="NativeDatePicker">
+        <clobbers target="NativeDatePicker" />
     </js-module>
 
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="DatePicker" >
-                <param name="android-package" value="com.holidayextras.cordova.plugin.android.DatePicker"/>
+            <feature name="NativeDatePicker" >
+                <param name="android-package" value="com.holidayextras.cordova.plugin.android.NativeDatePicker"/>
             </feature>
         </config-file>
 
-        <source-file src="src/com/holidayextras/cordova/plugin/android/DatePicker.java" target-dir="src/org/apache/cordova/DatePicker" />
+        <source-file src="src/com/holidayextras/cordova/plugin/android/NativeDatePicker.java" target-dir="src/org/apache/cordova/NativeDatePicker" />
     </platform>
 
 </plugin>
