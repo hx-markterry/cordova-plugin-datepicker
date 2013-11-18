@@ -2,10 +2,10 @@
  * Phonegap DatePicker Plugin Copyright (c) Greg Allen 2011 MIT Licensed
  * Reused and ported to Android plugin by Daniel van 't Oever
  */
-var DatePicker = (function (gap) {
-	/**
-	 * Constructor
-	 */
+ 
+ var exec = require('cordova/exec'),
+    cordova = require('cordova');
+ 
 	function DatePicker() {
 		this._callback;
 	}
@@ -31,7 +31,7 @@ var DatePicker = (function (gap) {
 		}
 		this._callback = cb;
 
-		return gap.exec(cb, failureCallback, 'DatePickerPlugin', defaults.mode, new Array(defaults));
+		return exec(cb, failureCallback, 'DatePickerPlugin', defaults.mode, new Array(defaults));
 	};
 
 	DatePicker.prototype._dateSelected = function(date) {
@@ -43,23 +43,5 @@ var DatePicker = (function (gap) {
 	function failureCallback(err) {
 		console.log("datePickerPlugin.js failed: " + err);
 	}
-
-	/**
-     * Load DatePicker
-     */
-    gap.addConstructor(function () {
-        if (gap.addPlugin) {
-            gap.addPlugin("datePicker", DatePicker);
-        } else {
-            if (!window.plugins) {
-                window.plugins = {};
-            }
-
-            window.plugins.datePicker = new DatePicker();
-        }
-    });
 	
-	return DatePicker;
-	
-	
-})(window.cordova || window.Cordova || window.PhoneGap);
+module.exports = DatePicker;
