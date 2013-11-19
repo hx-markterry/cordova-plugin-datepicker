@@ -23,7 +23,7 @@
             </feature>
         </config-file>
 
-        <source-file src="src/android/NativeDatePicker.java" target-dir="src/com/HolidayExtras/cordova/plugin/android/nativedatepicker" />
+        <source-file src="src/android/com/HolidayExtras/cordova/plugin/android/nativedatepicker/NativeDatePicker.java" target-dir="src/com/HolidayExtras/cordova/plugin/android/nativedatepicker" />
     </platform>
 
 </plugin>
