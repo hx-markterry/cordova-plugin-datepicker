@@ -1,3 +1,9 @@
+/**
+ * @author Bikas Vaibhav (http://bikasv.com) 2013
+ * Rewrote the plug-in at https://github.com/phonegap/phonegap-plugins/tree/master/Android/DatePicker
+ * It can now accept `min` and `max` dates for DatePicker.
+ */
+
 package com.HolidayExtras.cordova.plugin.android.nativedatepicker;
 
 import java.util.Calendar;
