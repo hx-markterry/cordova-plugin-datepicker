@@ -116,7 +116,7 @@ public class NativeDatePicker extends CordovaPlugin {
 				@Override
 				public void run() {
 					final DateSetListener dateSetListener = new DateSetListener(cbContext);
-					final DatePickerDialog dateDialog = new DatePickerDialog(currentCtx, android.R.style.Theme_DeviceDefault_Dialog, dateSetListener, mYear, mMonth, mDay);
+					final DatePickerDialog dateDialog = new DatePickerDialog(currentCtx, dateSetListener, mYear, mMonth, mDay);
 					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 						DatePicker dp = dateDialog.getDatePicker();
 						if(minDate > 0) {
