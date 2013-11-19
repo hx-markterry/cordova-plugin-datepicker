@@ -1,4 +1,4 @@
-package com.holidayextras.cordova.plugin.android.nativedatepicker;
+package com.HolidayExtras.cordova.plugin.android.nativedatepicker;
 
 import java.util.Calendar;
 import java.util.Date;
