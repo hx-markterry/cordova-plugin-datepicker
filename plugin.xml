@@ -10,6 +10,7 @@
     <license>Apache 2.0</license>
     <keywords>cordova,date,picker,android</keywords>
     <repo>https://github.com/hx-markterry/cordova-plugin-datepicker</repo>
+    <issue>https://github.com/hx-markterry/cordova-plugin-datepicker/issues</issue>
 
     <js-module src="www/datePickerPlugin.js" name="NativeDatePicker">
         <clobbers target="NativeDatePicker" />
