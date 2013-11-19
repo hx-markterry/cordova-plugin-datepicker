@@ -1,4 +1,4 @@
-package com.HolidayExtras.cordova.plugin.android.nativedatepicker;
+package com.holidayextras.cordova.plugin.android.nativedatepicker;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -93,8 +93,7 @@ public class NativeDatePicker extends CordovaPlugin {
 				@Override
 				public void run() {
 					final TimeSetListener timeSetListener = new TimeSetListener(cbContext);
-					final TimePickerDialog timeDialog = new TimePickerDialog(currentCtx, timeSetListener, mHour,
-							mMinutes, true);
+					final TimePickerDialog timeDialog = new TimePickerDialog(currentCtx, timeSetListener, mHour, mMinutes, true);
 					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 						timeDialog.setCancelable(true);
 						timeDialog.setCanceledOnTouchOutside(false);
@@ -111,13 +110,13 @@ public class NativeDatePicker extends CordovaPlugin {
 				}
 			};
 
-		} else if (ACTION_DATE.equalsIgnoreCase(action)) {
+		}
+		else if (ACTION_DATE.equalsIgnoreCase(action)) {
 			runnable = new Runnable() {
 				@Override
 				public void run() {
 					final DateSetListener dateSetListener = new DateSetListener(cbContext);
-					final DatePickerDialog dateDialog = new DatePickerDialog(currentCtx, dateSetListener, mYear,
-							mMonth, mDay);
+					final DatePickerDialog dateDialog = new DatePickerDialog(currentCtx, android.R.style.Theme_DeviceDefault_Dialog, dateSetListener, mYear, mMonth, mDay);
 					if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 						DatePicker dp = dateDialog.getDatePicker();
 						if(minDate > 0) {
@@ -130,11 +129,11 @@ public class NativeDatePicker extends CordovaPlugin {
 						dateDialog.setCancelable(true);
 						dateDialog.setCanceledOnTouchOutside(false);
 						dateDialog.setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel", new DialogInterface.OnClickListener() {
-				            @Override
-				            public void onClick(DialogInterface dialog, int which) {
-				            	cbContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
-				            }
-				        });
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								cbContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, ""));	//send an empty string back if cancelled
+							}
+						});
 						dateDialog.setOnKeyListener(new Dialog.OnKeyListener() {
 							@Override
 							public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
@@ -196,7 +195,8 @@ public class NativeDatePicker extends CordovaPlugin {
 				}
 			};
 
-		} else {
+		}
+		else {
 			Log.d(pluginName, "Unknown action. Only 'date' or 'time' are valid actions");
 			return;
 		}
