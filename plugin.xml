@@ -19,7 +19,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="NativeDatePicker" >
-                <param name="android-package" value="com.HolidayExtras.cordova.plugin.android.nativedatepicker.NativeDatePicker"/>
+                <param name="android-package" value="com.HolidayExtras.cordova.plugin.android.nativedatepicker"/>
             </feature>
         </config-file>
 
