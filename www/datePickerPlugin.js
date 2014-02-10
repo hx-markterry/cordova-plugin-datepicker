@@ -26,7 +26,7 @@
 		};
 
 		for ( var key in defaults) {
-			if (typeof options[key] !== "undefined"){
+			if (typeof options[key] !== "undefined" && options[key] !== null){
 				defaults[key] = options[key];
 			}
 		}
